@@ -1,0 +1,26 @@
+﻿@model MvcEmpty.Models.Users.Customer
+@{
+    ViewBag.Title = "AddCustomer";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AddCustomer</h2>
+
+@using (Html.BeginForm("Create", "Customer", FormMethod.Post))
+{
+    <fieldset>
+        <legend>Add Cusomter</legend>
+        <ol>
+            <li>
+                @Html.LabelFor(m => m.FirstName)
+                @Html.TextBoxFor(m => m.FirstName)
+            </li>
+            <li>
+                @Html.LabelFor(m => m.LastName)
+                @Html.TextBoxFor(m => m.LastName)
+            </li>
+        </ol>
+        <input type="submit" value="Update Details" />
+    </fieldset>
+}
+

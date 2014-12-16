@@ -1,0 +1,13 @@
+﻿@model List<MvcEmpty.Models.Appointments.Appointment>
+
+@{
+    ViewBag.Title = "All";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>All appointments</h2>
+
+@foreach (var element in Model)
+{
+    <p>@Html.ActionLink(element.Date.ToString() + " : "+element.Customer.FirstName + " " + element.Customer.LastName, "View", new { id = element.ID })</p>
+}

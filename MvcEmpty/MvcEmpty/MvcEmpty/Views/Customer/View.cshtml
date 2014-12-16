@@ -1,0 +1,29 @@
+﻿@model MvcEmpty.Models.Users.Customer
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View</h2>
+
+<div>
+<h3>User Details</h3>
+ID : @Html.Raw(Model.ID)<br />
+Firstname : @Html.Raw(Model.FirstName)<br />
+Lastname : @Html.Raw(Model.LastName)<br />
+Created : @Html.Raw(Model.CreatedDate)<br />
+</div>
+
+<div>
+<h3>Orders</h3>
+<table>
+<tr><td>ID</td><td>Created date</td></tr>
+@foreach (var order in @Model.Orders)
+{
+    <tr><td>@Html.Raw(order.ID)</td><td>@Html.Raw(order.CreatedDate)</td></tr>      
+}
+</table>
+
+@Html.ActionLink("Make appointment", "New", "Appointments", new { id= Model.ID }, Model.ID)
+
+</div>

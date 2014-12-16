@@ -1,0 +1,13 @@
+﻿@model List<MvcEmpty.Models.Users.Customer>
+
+@{
+    ViewBag.Title = "AllCustomers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>AllCustomers</h2>
+
+@foreach (var element in Model)
+{
+    <p>@Html.ActionLink(element.FirstName + " " + element.LastName, "View", new { id = element.ID })</p>
+}

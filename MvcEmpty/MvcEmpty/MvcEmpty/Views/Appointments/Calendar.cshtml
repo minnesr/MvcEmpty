@@ -1,0 +1,19 @@
+﻿@model List<MvcEmpty.Models.ViewModels.CalendarDay>
+@{
+    ViewBag.Title = "Calendar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Calendar</h2>
+
+<div class="PrevNext">@Html.ActionLink("Previous", "Calendar", new { dateToShow = ViewBag.LastMonth }) @Html.ActionLink("Next", "Calendar", new { dateToShow = ViewBag.NextMonth })</div>
+<div class="Month">
+
+
+    @for (int day = 1; day <= ViewBag.daysInMonth; day++)
+    {
+        @Html.Partial("~/Views/Appointments/Partials/_Day.cshtml",@Model.FirstOrDefault(d=>d.Date.Day==@day))
+    }
+
+    
+</div>

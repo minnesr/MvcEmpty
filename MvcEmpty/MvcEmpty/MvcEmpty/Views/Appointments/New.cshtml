@@ -1,0 +1,21 @@
+﻿@model MvcEmpty.Models.ViewModels.NewAppointment
+@{
+    ViewBag.Title = "New";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>
+    New</h2>
+@using (Html.BeginForm("New", "Appointments", FormMethod.Post))
+{
+    @Html.HiddenFor(t => t.CustomerID)
+    <fieldset>
+        <ol>
+            <li>Date : @Html.TextBoxFor(m => m.AppointmentDate, new { type = "date" })</li>
+            <li>Time From :@Html.TextBoxFor(m => m.AppointmentStartTime, new { type = "time" }) </li>
+            <li>Time To : @Html.TextBoxFor(m => m.AppointmentEndTime, new { type = "time" }) </li>
+            <li>Notes : @Html.TextAreaFor(m => m.AppointmentNotes)</li>
+            <li>Type : @Html.DropDownListFor(m => m.AppointmentTypeID, (SelectList)ViewBag.AppointmentTypes)</li>
+        </ol>
+        <input type="submit" value="Save" />
+    </fieldset>
+}

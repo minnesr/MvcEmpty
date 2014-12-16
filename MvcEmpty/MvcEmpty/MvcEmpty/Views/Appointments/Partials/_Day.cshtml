@@ -1,0 +1,15 @@
+﻿@model MvcEmpty.Models.ViewModels.CalendarDay
+
+<div class="Day">
+    <span>@Model.Date.Day. @Model.Date.DayOfWeek</span>
+    <p>
+        
+        @foreach (var app in @Model.Appointments)
+        { 
+            <div class="Appointment">
+              @Html.ActionLink(string.Format("{0} : {1}", @app.StartDate.TimeOfDay, @app.CustomerName), "View", new { id = @app.AppointmentID })
+                
+            </div>
+        } 
+    </p>
+</div>      

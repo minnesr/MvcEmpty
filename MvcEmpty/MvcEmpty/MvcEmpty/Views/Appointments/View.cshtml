@@ -1,0 +1,15 @@
+﻿@model MvcEmpty.Models.ViewModels.CustomerAppointment
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View</h2>
+
+@Html.Raw("ID : " + Model.AppointmentID)
+<br />
+@Html.Raw("Customer : " + Model.CustomerName)
+<br />
+@Html.Raw("Date : " + Model.AppointmentDate)
+<br />
+@Html.Raw("Notes : " + Model.AppointmentNotes)

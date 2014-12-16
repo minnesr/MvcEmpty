@@ -1,0 +1,17 @@
+﻿@model MvcEmpty.Models.Products.Product
+@{
+    ViewBag.Title = "View";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>View</h2>
+
+
+<div>
+<h3>Product Details</h3>
+ID : @Html.Raw(Model.ID)<br />
+Name : @Html.Raw(Model.Name )<br />
+Description : @Html.Raw(Model.Description)<br />
+Price : @Html.Raw(Model.Price)<br />
+@Html.ActionLink("Add to basket", "View", new { prod = Model })
+</div>
